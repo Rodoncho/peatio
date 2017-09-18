@@ -15,3 +15,19 @@ html lang="en"
       = yield
       #push
     = render 'shared/footer'
+javascript:    
+  $(document).ready(function() {
+    $.ajax({
+        url: "/api/v2/tickers",
+        dataType: 'json',
+        success: function(results){
+          for( cur in results)
+          {
+            $(".tickers").append("<li class='ticker'><div>"+cur+"</div><div>"+results[cur].ticker.buy+"</div></li>")
+          }
+        },
+        error:function(exception){
+          
+        }
+    });
+  });

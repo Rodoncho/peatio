@@ -2,10 +2,137 @@
   header {
     overflow: hidden;
     position: relative;
+    width:100%;
+    min-height:280px;
+    top:0px;
+    height:280px;
     color: rgba(83,102,120, 1.0);
+    background: rgba(0,102,128,1);
+    background: -moz-linear-gradient(left, rgba(0,102,128,1) 0%, rgba(0,69,80,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,102,128,1)), color-stop(100%, rgba(0,69,80,1)));
+    background: -webkit-linear-gradient(left, rgba(0,102,128,1) 0%, rgba(0,69,80,1) 100%);
+    background: -o-linear-gradient(left, rgba(0,102,128,1) 0%, rgba(0,69,80,1) 100%);
+    background: -ms-linear-gradient(left, rgba(0,102,128,1) 0%, rgba(0,69,80,1) 100%);
+    background: linear-gradient(to right, rgba(0,102,128,1) 0%, rgba(0,69,80,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006680', endColorstr='#004550', GradientType=1 );
+    //margin-bottom: 50px;
+
+    .top-holder:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .top-holder {
+        width: 100%;
+        padding: 18px 26px 0 34px;
+    }
+    @media screen and (max-width:992px) {
+        .logo {
+            float: none;
+            display: block;
+            margin: 0 auto;
+        }
+        .links {
+            float: none;
+            margin: 0 auto;
+            width: 320px;
+            text-align: center;
+        }
+
+        .top-links {
+            float: none;
+        }
+
+        .top-links:first-child {
+            margin-left: 0;
+        }
+
+        #header {
+            position: relative;
+        }
+
+        #header .login {
+            width: 100%;
+            position: absolute;
+            bottom: 15px;
+            right: 0px;
+        }
+
+        #header .heading {
+            width: 100%;
+            overflow: hidden;
+            float: none;
+            text-align: center;
+        }
+    }
+    .logo {
+        min-width: 10px;
+        width: 220px;
+        height: 60px;
+        background: url(/assets/logo2.svg) no-repeat;
+        background-size:100%;
+        text-indent: -9999px;
+        overflow: hidden;
+        z-index: 9;
+        float: left;
+    }
+
+    .top-links {
+        color: #FFF;
+        font: 13px / 41px 'uni_sans_semiboldregular', Arial, Helvetica, sans-serif;
+        float: left;
+        margin-top:5px;
+        margin-left: 24px;
+    }
+
+    .links-block {
+        float: left;
+    }
+
+    .top-links:hover {
+        color: #1eb5cc;
+        text-decoration: none;
+    }
 
     .container {
-      padding-top: 60px;
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+        height: 280px;
+        background-image: url("/assets/graph.png");
+        background-repeat: no-repeat;
+        background-position: bottom center;
+    }
+
+    .message {
+        margin-top: 40px;
+        font: 32px 'uni_sans_semiboldregular', Arial, Helvetica, sans-serif;
+        color: #fff;
+    }
+
+    .highlight {
+        font: 50px 'uni_sans_semiboldregular', Arial, Helvetica, sans-serif;
+        color: #1eb5cc;
+    }
+
+    @media (min-width:768px) {
+        .container {
+            width: 750px
+        }
+    }
+
+    @media (min-width:992px) {
+        .container {
+            width: 970px
+        }
+    }
+
+    @media (min-width:1185px) {
+        .container {
+            width: 1165px
+        }
     }
 
     .ribbon a:hover {
@@ -41,7 +168,46 @@
     }
 
     #getstart {
-      margin-bottom: 50px;
+        text-align: right;
+        font-size: 0;
+        line-height: 0;
+        //letter-spacing: -4px;
+        color: #12e1d6;
+        padding: 3px 0 20px 0;
+        //border-bottom: 1px solid rgba(255, 255, 255, .3);
+        .btn {
+            border: 1px solid rgba(255, 255, 255, .3);
+            border-radius:2px;
+            margin-right:10px;
+            background-color: rgba(255, 255, 255, .12);
+        }
+        .btn:hover {
+            background-color: rgba(255, 255, 255, .05);
+            color: #1eb5cc;
+        }
     }
+  }
+  .tickers {
+    margin:0px;
+    padding:0px;
+    color:#777;
+    background-color:#fff;
+    width:100%;
+    .ticker {
+        display: inline-block;
+        margin: 0 10px;
+        
+        font: 20px 'uni_sans_semiboldregular', Arial, Helvetica, sans-serif;
+    }
+  }
+  #band {
+    .block {
+        width:30%
+    }
+    padding:2% 10%;
+    display: flex;
+    justify-content: center;
+    
+    background-color:#ddd;
   }
 }

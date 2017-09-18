@@ -1,23 +1,32 @@
 header.text-center
-  .ribbon
-    a href="https://github.com/peatio/peatio" View on GitHub
   .container
-    a href='http://github.com/peatio/peatio'
-      img src='#{image_path 'logo.png'}' width='336px'
-    section
-      - Rails.configuration.i18n.available_locales.each do |locale|
-        h3 = t(:slogan, locale: locale)
-    #getstart.row
-      - unless current_user
-        .col-xs-4.col-xs-offset-8
-          a href="#{signin_path}" class="btn btn-primary btn-lg btn-block" role="button" = t("header.signin")
-        - if ENV['WEIBO_AUTH'] == "true"
-          .col-xs-4
-            a href="/auth/weibo" class="btn btn-primary btn-lg btn-block" role="button" = t("header.login_via_weibo")
-        .col-xs-4
-          a href="#{signup_path}" class="btn btn-primary btn-lg btn-block" role="button" = t("header.signup")
-      - else
-        .col-xs-6.col-xs-offset-9.text-center
-          a href="#{market_path(current_market)}" class="btn btn-primary btn-lg btn-block" role="button" = t("header.getstart")
-          a href="#{funds_path}" class="btn btn-primary btn-lg btn-block" role="button" = t("header.funds")
-          a href="#{settings_path}" class="btn btn-primary btn-lg btn-block" role="button" = t("header.settings")
+    .row
+      .top-holder
+        a.logo href='/' RYPTOX
+        .links
+          a.top-links href="#{market_path(current_market)}" MARKETS
+        #getstart
+          - unless current_user
+            
+            a href="#{signin_path}" class="btn btn-primary" role="button" = t("header.signin")
+            - if ENV['WEIBO_AUTH'] == "true"
+              a href="/auth/weibo" class="btn btn-primary" role="button" = t("header.login_via_weibo")
+            a href="#{signup_path}" class="btn btn-primary" role="button" = t("header.signup")
+          - else
+            a href="#{market_path(current_market)}" class="btn btn-primary btn-xs" role="button" = t("header.getstart")
+            a href="#{funds_path}" class="btn btn-primary btn-xs" role="button" = t("header.funds")
+            a href="#{settings_path}" class="btn btn-primary btn-xs" role="button" = t("header.settings")
+    .message BEGIN TRADING DIGITAL ASSETS
+    .highlight TODAY
+#tickers.text-center
+  ul.tickers
+#band.text-center
+  item.block
+    img src='assets/world.png'
+    p 7/24 support for our valued customer from all around the world.Verification processes and ticket responses with in a day.
+  item.block
+    img src='assets/ccard.png'
+    p You can always use your credit card to fund your account or you can just use wire transfer.
+  item.block
+    img src='assets/bit.png'
+    p You can request for your instant withdawal for all your cryptocurrencies.
